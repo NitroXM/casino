@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Blackjack Game</title>
+    <link rel="stylesheet" href="/css/table.css">
+</head>
+<body>
+<div th:replace="~{fragments :: topRight(${username}, ${balance})}"></div>
+<h1 th:text="'Blackjack Game (Table ' + ${id} + ')'"></h1>
+
+<section id="dealer">
+    <h2>Dealer Cards</h2>
+    <div id="dealerCards-el">0</div>
+</section>
+
+<section id="player-cards">
+    <div id="playerCards-el">0</div>
+    <h2>Player Cards</h2>
+</section>
+
+<section id="bets">
+    <h2>Bet:</h2>
+    <p><input type="number" id="bet-el" value="100"></p>
+    <button id="play-btn">Play</button>
+</section>
+
+<section id="buttons">
+    <button id="hit-btn" disabled>Hit</button>
+    <button id="stand-btn" disabled>Stand</button>
+    <button id="doubleDown-btn" disabled>Double Down</button>
+
+</section>
+
+<script src="../static/table.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+# Maven build output
+/target/
+
+# IntelliJ IDEA project files
+/.idea/
+/*.iml
+/modules.xml
+/.idea/workspace.xml
+/.idea/tasks.xml
+/.idea/dictionaries
+/.idea/httpRequests
+/.idea/inspectionProfiles
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build artifacts
+*.class
+*.jar
+*.war
+*.ear
+
+# Temporary files
+*.tmp
+*.swp
+
+# Azure deployment cache
+.*/obj/
+.*/bin/
+
+# Maven wrapper JAR (optional, can be tracked if you want reproducible builds)
+.mvn/wrapper/maven-wrapper.jar

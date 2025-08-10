@@ -1,0 +1,15 @@
+<!-- fragments.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="topRight(username, balance)">
+    <div class="top-right">
+        <p>Welcome, <span th:text="${username}">user</span>!</p>
+        <p>Your balance: <span th:text="${balance}">0</span></p>
+        <a href="/toLogout">
+            <button id="logout-btn">Logout</button>
+        </a>
+    </div>
+</div>
+</body>
+</html>

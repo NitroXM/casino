@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
     <groupId>org.example</groupId>
-    <artifactId>playground</artifactId>
+    <artifactId>casino</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>casino</name>
     <description>casino</description>
@@ -30,7 +30,7 @@
         <java.version>21</java.version>
     </properties>
 
-    <!-- ✅ Only BOMs go here -->
+    <!-- dependencyManagement: only the BOM -->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -39,10 +39,6 @@
                 <version>5.22.0</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.azure.spring</groupId>
-                <artifactId>spring-cloud-azure-starter-keyvault</artifactId>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -103,15 +99,12 @@
 
         <dependency>
             <groupId>com.azure.spring</groupId>
-            <artifactId>azure-spring-boot-starter-keyvault-secrets</artifactId>
-            <version>4.0.0</version>
+            <artifactId>spring-cloud-azure-starter-keyvault</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
-            <version>12.10.0.jre11</version>
-            <scope>compile</scope>
+            <groupId>com.azure.spring</groupId>
+            <artifactId>spring-cloud-azure-starter-keyvault-secrets</artifactId>
         </dependency>
 
         <dependency>
@@ -185,6 +178,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-maven-plugin</artifactId>
+            <version>11.7.2</version>
             </plugin>
         </plugins>
     </build>

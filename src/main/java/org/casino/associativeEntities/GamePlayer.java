@@ -29,11 +29,18 @@ public class GamePlayer {
     @OneToMany(mappedBy="owner", cascade=ALL, orphanRemoval=true)
     private List<Card> hand;
 
+    private boolean  isDealer;
 
-    private boolean dealer;
-    private int seatNumber;
-    private int bet;
-    private boolean canDoubleDown;
+    private Integer seatNumber;
+
+    @Column(nullable = true)
+    private Integer bet;
+
+    @Column(nullable = true)
+    private Boolean canDoubleDown;
+
     private boolean isDone;
-    private boolean hasWon;
+
+    @Column(nullable = true)
+    private Boolean hasWon;
 }

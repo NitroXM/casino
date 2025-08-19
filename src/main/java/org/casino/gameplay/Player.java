@@ -1,8 +1,6 @@
 package org.casino.gameplay;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,6 +22,10 @@ public class Player {
 
     @OneToMany(mappedBy = "player")
     private List<GamePlayer> gamePlayer = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "room_id", nullable = true)
+    private Room room;
 
     public Player(String keycloakId, String email, String givenName) {
         this.keycloakId = keycloakId;
